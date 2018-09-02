@@ -1,7 +1,7 @@
 var fs = require('fs'); 
 var https = require('https'); 
 var options = { 
-    hostname: '192.168.1.183', 
+    hostname: 'homehud.westus.cloudapp.azure.com', 
     port: 8000, 
     path: '/', 
     method: 'GET', 
