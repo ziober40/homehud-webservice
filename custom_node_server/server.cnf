@@ -2,10 +2,9 @@
 default_bits           = 4096
 days                   = 9999
 distinguished_name     = req_distinguished_name
-attributes             = req_attributes
 prompt                 = no
-x509_extensions        = v3_ca
-req_extensions = v3_req
+x509_extensions        = v3_req
+req_extensions         = v3_req
 
 [ req_distinguished_name ]
 C                      = US
@@ -14,14 +13,6 @@ L                      = Boston
 O                      = Example Co
 OU                     = techops
 CN                     = raspberry
-emailAddress           = certs@example.com
-
-[ req_attributes ]
-challengePassword      = password
-
-[ v3_ca ]
-authorityInfoAccess = @issuer_info
-subjectAltName = @alternate_names
 
 [ v3_req ]
 subjectAltName = @alternate_names
@@ -32,7 +23,3 @@ extendedKeyUsage = serverAuth
 IP.1 = 192.168.1.183
 DNS.1 = localhost
 DNS.2 = homehud.westus.cloudapp.azure.com
-
-[ issuer_info ]
-OCSP;URI.0 = http://ocsp.example.com/
-caIssuers;URI.0 = http://example.com/ca.cert
